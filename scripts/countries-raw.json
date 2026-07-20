@@ -1,0 +1,794 @@
+[
+  {
+    "alpha2": "is",
+    "name": "アイスランド"
+  },
+  {
+    "alpha2": "ie",
+    "name": "アイルランド"
+  },
+  {
+    "alpha2": "az",
+    "name": "アゼルバイジャン"
+  },
+  {
+    "alpha2": "af",
+    "name": "アフガニスタン"
+  },
+  {
+    "alpha2": "us",
+    "name": "アメリカ合衆国"
+  },
+  {
+    "alpha2": "ae",
+    "name": "アラブ首長国連邦"
+  },
+  {
+    "alpha2": "dz",
+    "name": "アルジェリア"
+  },
+  {
+    "alpha2": "ar",
+    "name": "アルゼンチン"
+  },
+  {
+    "alpha2": "al",
+    "name": "アルバニア"
+  },
+  {
+    "alpha2": "am",
+    "name": "アルメニア"
+  },
+  {
+    "alpha2": "ao",
+    "name": "アンゴラ"
+  },
+  {
+    "alpha2": "ag",
+    "name": "アンティグア・バーブーダ"
+  },
+  {
+    "alpha2": "ad",
+    "name": "アンドラ"
+  },
+  {
+    "alpha2": "ye",
+    "name": "イエメン"
+  },
+  {
+    "alpha2": "gb",
+    "name": "イギリス"
+  },
+  {
+    "alpha2": "il",
+    "name": "イスラエル"
+  },
+  {
+    "alpha2": "it",
+    "name": "イタリア"
+  },
+  {
+    "alpha2": "iq",
+    "name": "イラク"
+  },
+  {
+    "alpha2": "ir",
+    "name": "イラン・イスラム共和国"
+  },
+  {
+    "alpha2": "in",
+    "name": "インド"
+  },
+  {
+    "alpha2": "id",
+    "name": "インドネシア"
+  },
+  {
+    "alpha2": "ug",
+    "name": "ウガンダ"
+  },
+  {
+    "alpha2": "ua",
+    "name": "ウクライナ"
+  },
+  {
+    "alpha2": "uz",
+    "name": "ウズベキスタン"
+  },
+  {
+    "alpha2": "uy",
+    "name": "ウルグアイ"
+  },
+  {
+    "alpha2": "ec",
+    "name": "エクアドル"
+  },
+  {
+    "alpha2": "eg",
+    "name": "エジプト"
+  },
+  {
+    "alpha2": "ee",
+    "name": "エストニア"
+  },
+  {
+    "alpha2": "sz",
+    "name": "エスワティニ"
+  },
+  {
+    "alpha2": "et",
+    "name": "エチオピア"
+  },
+  {
+    "alpha2": "er",
+    "name": "エリトリア"
+  },
+  {
+    "alpha2": "sv",
+    "name": "エルサルバドル"
+  },
+  {
+    "alpha2": "au",
+    "name": "オーストラリア"
+  },
+  {
+    "alpha2": "at",
+    "name": "オーストリア"
+  },
+  {
+    "alpha2": "om",
+    "name": "オマーン"
+  },
+  {
+    "alpha2": "nl",
+    "name": "オランダ"
+  },
+  {
+    "alpha2": "gh",
+    "name": "ガーナ"
+  },
+  {
+    "alpha2": "cv",
+    "name": "カーボベルデ"
+  },
+  {
+    "alpha2": "gy",
+    "name": "ガイアナ"
+  },
+  {
+    "alpha2": "kz",
+    "name": "カザフスタン"
+  },
+  {
+    "alpha2": "qa",
+    "name": "カタール"
+  },
+  {
+    "alpha2": "ca",
+    "name": "カナダ"
+  },
+  {
+    "alpha2": "ga",
+    "name": "ガボン"
+  },
+  {
+    "alpha2": "cm",
+    "name": "カメルーン"
+  },
+  {
+    "alpha2": "gm",
+    "name": "ガンビア"
+  },
+  {
+    "alpha2": "kh",
+    "name": "カンボジア"
+  },
+  {
+    "alpha2": "mk",
+    "name": "北マケドニア"
+  },
+  {
+    "alpha2": "gn",
+    "name": "ギニア"
+  },
+  {
+    "alpha2": "gw",
+    "name": "ギニアビサウ"
+  },
+  {
+    "alpha2": "cy",
+    "name": "キプロス"
+  },
+  {
+    "alpha2": "cu",
+    "name": "キューバ"
+  },
+  {
+    "alpha2": "gr",
+    "name": "ギリシャ"
+  },
+  {
+    "alpha2": "ki",
+    "name": "キリバス"
+  },
+  {
+    "alpha2": "kg",
+    "name": "キルギス"
+  },
+  {
+    "alpha2": "gt",
+    "name": "グアテマラ"
+  },
+  {
+    "alpha2": "kw",
+    "name": "クウェート"
+  },
+  {
+    "alpha2": "gd",
+    "name": "グレナダ"
+  },
+  {
+    "alpha2": "hr",
+    "name": "クロアチア"
+  },
+  {
+    "alpha2": "ke",
+    "name": "ケニア"
+  },
+  {
+    "alpha2": "ci",
+    "name": "コートジボワール"
+  },
+  {
+    "alpha2": "cr",
+    "name": "コスタリカ"
+  },
+  {
+    "alpha2": "km",
+    "name": "コモロ"
+  },
+  {
+    "alpha2": "co",
+    "name": "コロンビア"
+  },
+  {
+    "alpha2": "cg",
+    "name": "コンゴ共和国"
+  },
+  {
+    "alpha2": "cd",
+    "name": "コンゴ民主共和国"
+  },
+  {
+    "alpha2": "sa",
+    "name": "サウジアラビア"
+  },
+  {
+    "alpha2": "ws",
+    "name": "サモア"
+  },
+  {
+    "alpha2": "st",
+    "name": "サントメ・プリンシペ"
+  },
+  {
+    "alpha2": "zm",
+    "name": "ザンビア"
+  },
+  {
+    "alpha2": "sm",
+    "name": "サンマリノ"
+  },
+  {
+    "alpha2": "sl",
+    "name": "シエラレオネ"
+  },
+  {
+    "alpha2": "dj",
+    "name": "ジブチ"
+  },
+  {
+    "alpha2": "jm",
+    "name": "ジャマイカ"
+  },
+  {
+    "alpha2": "ge",
+    "name": "ジョージア"
+  },
+  {
+    "alpha2": "sy",
+    "name": "シリア・アラブ共和国"
+  },
+  {
+    "alpha2": "sg",
+    "name": "シンガポール"
+  },
+  {
+    "alpha2": "zw",
+    "name": "ジンバブエ"
+  },
+  {
+    "alpha2": "ch",
+    "name": "スイス"
+  },
+  {
+    "alpha2": "se",
+    "name": "スウェーデン"
+  },
+  {
+    "alpha2": "sd",
+    "name": "スーダン"
+  },
+  {
+    "alpha2": "es",
+    "name": "スペイン"
+  },
+  {
+    "alpha2": "sr",
+    "name": "スリナム"
+  },
+  {
+    "alpha2": "lk",
+    "name": "スリランカ"
+  },
+  {
+    "alpha2": "sk",
+    "name": "スロバキア"
+  },
+  {
+    "alpha2": "si",
+    "name": "スロベニア"
+  },
+  {
+    "alpha2": "sc",
+    "name": "セーシェル"
+  },
+  {
+    "alpha2": "gq",
+    "name": "赤道ギニア"
+  },
+  {
+    "alpha2": "sn",
+    "name": "セネガル"
+  },
+  {
+    "alpha2": "rs",
+    "name": "セルビア"
+  },
+  {
+    "alpha2": "kn",
+    "name": "セントクリストファー・ネイビス"
+  },
+  {
+    "alpha2": "vc",
+    "name": "セントビンセント・グレナディーン"
+  },
+  {
+    "alpha2": "lc",
+    "name": "セントルシア"
+  },
+  {
+    "alpha2": "so",
+    "name": "ソマリア"
+  },
+  {
+    "alpha2": "sb",
+    "name": "ソロモン諸島"
+  },
+  {
+    "alpha2": "th",
+    "name": "タイ"
+  },
+  {
+    "alpha2": "kr",
+    "name": "大韓民国"
+  },
+  {
+    "alpha2": "tj",
+    "name": "タジキスタン"
+  },
+  {
+    "alpha2": "tz",
+    "name": "タンザニア"
+  },
+  {
+    "alpha2": "cz",
+    "name": "チェコ"
+  },
+  {
+    "alpha2": "td",
+    "name": "チャド"
+  },
+  {
+    "alpha2": "cf",
+    "name": "中央アフリカ共和国"
+  },
+  {
+    "alpha2": "cn",
+    "name": "中華人民共和国"
+  },
+  {
+    "alpha2": "tn",
+    "name": "チュニジア"
+  },
+  {
+    "alpha2": "kp",
+    "name": "朝鮮民主主義人民共和国"
+  },
+  {
+    "alpha2": "cl",
+    "name": "チリ"
+  },
+  {
+    "alpha2": "tv",
+    "name": "ツバル"
+  },
+  {
+    "alpha2": "dk",
+    "name": "デンマーク"
+  },
+  {
+    "alpha2": "de",
+    "name": "ドイツ"
+  },
+  {
+    "alpha2": "tg",
+    "name": "トーゴ"
+  },
+  {
+    "alpha2": "do",
+    "name": "ドミニカ共和国"
+  },
+  {
+    "alpha2": "dm",
+    "name": "ドミニカ国"
+  },
+  {
+    "alpha2": "tt",
+    "name": "トリニダード・トバゴ"
+  },
+  {
+    "alpha2": "tm",
+    "name": "トルクメニスタン"
+  },
+  {
+    "alpha2": "tr",
+    "name": "トルコ"
+  },
+  {
+    "alpha2": "to",
+    "name": "トンガ"
+  },
+  {
+    "alpha2": "ng",
+    "name": "ナイジェリア"
+  },
+  {
+    "alpha2": "nr",
+    "name": "ナウル"
+  },
+  {
+    "alpha2": "na",
+    "name": "ナミビア"
+  },
+  {
+    "alpha2": "ni",
+    "name": "ニカラグア"
+  },
+  {
+    "alpha2": "ne",
+    "name": "ニジェール"
+  },
+  {
+    "alpha2": "jp",
+    "name": "日本"
+  },
+  {
+    "alpha2": "nz",
+    "name": "ニュージーランド"
+  },
+  {
+    "alpha2": "np",
+    "name": "ネパール"
+  },
+  {
+    "alpha2": "no",
+    "name": "ノルウェー"
+  },
+  {
+    "alpha2": "bh",
+    "name": "バーレーン"
+  },
+  {
+    "alpha2": "ht",
+    "name": "ハイチ"
+  },
+  {
+    "alpha2": "pk",
+    "name": "パキスタン"
+  },
+  {
+    "alpha2": "pa",
+    "name": "パナマ"
+  },
+  {
+    "alpha2": "vu",
+    "name": "バヌアツ"
+  },
+  {
+    "alpha2": "bs",
+    "name": "バハマ"
+  },
+  {
+    "alpha2": "pg",
+    "name": "パプアニューギニア"
+  },
+  {
+    "alpha2": "pw",
+    "name": "パラオ"
+  },
+  {
+    "alpha2": "py",
+    "name": "パラグアイ"
+  },
+  {
+    "alpha2": "bb",
+    "name": "バルバドス"
+  },
+  {
+    "alpha2": "hu",
+    "name": "ハンガリー"
+  },
+  {
+    "alpha2": "bd",
+    "name": "バングラデシュ"
+  },
+  {
+    "alpha2": "tl",
+    "name": "東ティモール"
+  },
+  {
+    "alpha2": "fj",
+    "name": "フィジー"
+  },
+  {
+    "alpha2": "ph",
+    "name": "フィリピン"
+  },
+  {
+    "alpha2": "fi",
+    "name": "フィンランド"
+  },
+  {
+    "alpha2": "bt",
+    "name": "ブータン"
+  },
+  {
+    "alpha2": "br",
+    "name": "ブラジル"
+  },
+  {
+    "alpha2": "fr",
+    "name": "フランス"
+  },
+  {
+    "alpha2": "bg",
+    "name": "ブルガリア"
+  },
+  {
+    "alpha2": "bf",
+    "name": "ブルキナファソ"
+  },
+  {
+    "alpha2": "bn",
+    "name": "ブルネイ・ダルサラーム"
+  },
+  {
+    "alpha2": "bi",
+    "name": "ブルンジ"
+  },
+  {
+    "alpha2": "vn",
+    "name": "ベトナム"
+  },
+  {
+    "alpha2": "bj",
+    "name": "ベナン"
+  },
+  {
+    "alpha2": "ve",
+    "name": "ベネズエラ・ボリバル共和国"
+  },
+  {
+    "alpha2": "by",
+    "name": "ベラルーシ"
+  },
+  {
+    "alpha2": "bz",
+    "name": "ベリーズ"
+  },
+  {
+    "alpha2": "pe",
+    "name": "ペルー"
+  },
+  {
+    "alpha2": "be",
+    "name": "ベルギー"
+  },
+  {
+    "alpha2": "pl",
+    "name": "ポーランド"
+  },
+  {
+    "alpha2": "ba",
+    "name": "ボスニア・ヘルツェゴビナ"
+  },
+  {
+    "alpha2": "bw",
+    "name": "ボツワナ"
+  },
+  {
+    "alpha2": "bo",
+    "name": "ボリビア多民族国"
+  },
+  {
+    "alpha2": "pt",
+    "name": "ポルトガル"
+  },
+  {
+    "alpha2": "hn",
+    "name": "ホンジュラス"
+  },
+  {
+    "alpha2": "mh",
+    "name": "マーシャル諸島"
+  },
+  {
+    "alpha2": "mg",
+    "name": "マダガスカル"
+  },
+  {
+    "alpha2": "mw",
+    "name": "マラウイ"
+  },
+  {
+    "alpha2": "ml",
+    "name": "マリ"
+  },
+  {
+    "alpha2": "mt",
+    "name": "マルタ"
+  },
+  {
+    "alpha2": "my",
+    "name": "マレーシア"
+  },
+  {
+    "alpha2": "fm",
+    "name": "ミクロネシア連邦"
+  },
+  {
+    "alpha2": "za",
+    "name": "南アフリカ"
+  },
+  {
+    "alpha2": "ss",
+    "name": "南スーダン"
+  },
+  {
+    "alpha2": "mm",
+    "name": "ミャンマー"
+  },
+  {
+    "alpha2": "mx",
+    "name": "メキシコ"
+  },
+  {
+    "alpha2": "mu",
+    "name": "モーリシャス"
+  },
+  {
+    "alpha2": "mr",
+    "name": "モーリタニア"
+  },
+  {
+    "alpha2": "mz",
+    "name": "モザンビーク"
+  },
+  {
+    "alpha2": "mc",
+    "name": "モナコ"
+  },
+  {
+    "alpha2": "mv",
+    "name": "モルディブ"
+  },
+  {
+    "alpha2": "md",
+    "name": "モルドバ共和国"
+  },
+  {
+    "alpha2": "ma",
+    "name": "モロッコ"
+  },
+  {
+    "alpha2": "mn",
+    "name": "モンゴル"
+  },
+  {
+    "alpha2": "me",
+    "name": "モンテネグロ"
+  },
+  {
+    "alpha2": "jo",
+    "name": "ヨルダン"
+  },
+  {
+    "alpha2": "la",
+    "name": "ラオス人民民主共和国"
+  },
+  {
+    "alpha2": "lv",
+    "name": "ラトビア"
+  },
+  {
+    "alpha2": "lt",
+    "name": "リトアニア"
+  },
+  {
+    "alpha2": "ly",
+    "name": "リビア"
+  },
+  {
+    "alpha2": "li",
+    "name": "リヒテンシュタイン"
+  },
+  {
+    "alpha2": "lr",
+    "name": "リベリア"
+  },
+  {
+    "alpha2": "ro",
+    "name": "ルーマニア"
+  },
+  {
+    "alpha2": "lu",
+    "name": "ルクセンブルク"
+  },
+  {
+    "alpha2": "rw",
+    "name": "ルワンダ"
+  },
+  {
+    "alpha2": "ls",
+    "name": "レソト"
+  },
+  {
+    "alpha2": "lb",
+    "name": "レバノン"
+  },
+  {
+    "alpha2": "ru",
+    "name": "ロシア連邦"
+  },
+  {
+    "alpha2": "tw",
+    "name": "台湾"
+  },
+  {
+    "alpha2": "va",
+    "name": "バチカン"
+  },
+  {
+    "alpha2": "ps",
+    "name": "パレスチナ"
+  },
+  {
+    "alpha2": "xk",
+    "name": "コソボ"
+  },
+  {
+    "alpha2": "eh",
+    "name": "西サハラ"
+  }
+]

@@ -5,15 +5,20 @@ import { addFurigana } from '../utils/furigana'
 const LABELS = ['Ａ', 'Ｂ', 'Ｃ', 'Ｄ']
 const COLORS = ['btn-red', 'btn-blue', 'btn-green', 'btn-purple']
 
-export default function QuizScreen({ question, questionIndex, total, onAnswer, onNext }) {
+export default function QuizScreen({ question, questionIndex, total, stageTitle, onAnswer, onNext }) {
   const [selected, setSelected] = useState(null)
   const [showHint, setShowHint] = useState(false)
   const [imgLoaded, setImgLoaded] = useState(false)
+  const [choiceLoaded, setChoiceLoaded] = useState({})
 
   const isAnswered = selected !== null
   const isCorrect = isAnswered && selected === question.correct
   const progress = (questionIndex / total) * 100
+  const isFlagMode = question.mode === 'flag'
   const flagUrl = `https://flagcdn.com/w320/${question.code}.png`
+  const correctLabel = isFlagMode
+    ? question.choiceNames[question.correct]
+    : question.choices[question.correct]
 
   const handleSelect = (index) => {
     if (isAnswered) return
@@ -25,7 +30,6 @@ export default function QuizScreen({ question, questionIndex, total, onAnswer, o
 
   return (
     <div className="quiz-screen">
-      {/* ── progress ── */}
       <div className="progress-wrap">
         <div className="progress-bar">
           <div className="progress-fill" style={{ width: `${progress}%` }} />
@@ -38,18 +42,36 @@ export default function QuizScreen({ question, questionIndex, total, onAnswer, o
         </div>
       </div>
 
-      {/* ── flag card ── */}
+      {stageTitle && <p className="quiz-stage-label">{stageTitle}</p>}
+
       <div className="flag-card">
-        <p className="flag-question">この<ruby>国旗<rt>こっき</rt></ruby>はどこの<ruby>国<rt>くに</rt></ruby>？</p>
-        <div className="flag-wrap">
-          {!imgLoaded && <div className="flag-skeleton">🚩 読み込み中…</div>}
-          <img
-            src={flagUrl}
-            alt="国旗"
-            className={`flag-img ${imgLoaded ? 'loaded' : ''}`}
-            onLoad={() => setImgLoaded(true)}
-          />
-        </div>
+        <p className="flag-question">
+          {isFlagMode ? (
+            <>この<ruby>国<rt>くに</rt></ruby>の<ruby>国旗<rt>こっき</rt></ruby>はどれ？</>
+          ) : (
+            <>この<ruby>国旗<rt>こっき</rt></ruby>はどこの<ruby>国<rt>くに</rt></ruby>？</>
+          )}
+        </p>
+
+        {isFlagMode ? (
+          <div className="name-prompt">
+            <span
+              className="name-prompt-text"
+              dangerouslySetInnerHTML={{ __html: addFurigana(question.name) }}
+            />
+          </div>
+        ) : (
+          <div className="flag-wrap">
+            {!imgLoaded && <div className="flag-skeleton">🚩 読み込み中…</div>}
+            <img
+              src={flagUrl}
+              alt="国旗"
+              className={`flag-img ${imgLoaded ? 'loaded' : ''}`}
+              onLoad={() => setImgLoaded(true)}
+            />
+          </div>
+        )}
+
         <button
           className={`hint-toggle ${showHint ? 'hint-open' : ''}`}
           onClick={() => setShowHint(!showHint)}
@@ -64,27 +86,48 @@ export default function QuizScreen({ question, questionIndex, total, onAnswer, o
         )}
       </div>
 
-      {/* ── answer area: choices OR feedback ── */}
       <div className="answer-area">
         {!isAnswered ? (
-          <div className="choices-grid">
-            {question.choices.map((choice, i) => (
-              <button
-                key={i}
-                className={`choice-btn ${COLORS[i]}`}
-                onClick={() => handleSelect(i)}
-              >
-                <span className="choice-label">{LABELS[i]}</span>
-                <span
-                  className="choice-text"
-                  dangerouslySetInnerHTML={{ __html: addFurigana(choice) }}
-                />
-              </button>
-            ))}
-          </div>
+          isFlagMode ? (
+            <div className="flag-choices-grid">
+              {question.choices.map((code, i) => (
+                <button
+                  key={code}
+                  className={`flag-choice-btn ${COLORS[i]}`}
+                  onClick={() => handleSelect(i)}
+                >
+                  <span className="choice-label">{LABELS[i]}</span>
+                  <span className="flag-choice-img-wrap">
+                    {!choiceLoaded[i] && <span className="flag-choice-skel">…</span>}
+                    <img
+                      src={`https://flagcdn.com/w160/${code}.png`}
+                      alt={`選択肢${LABELS[i]}`}
+                      className={`flag-choice-img ${choiceLoaded[i] ? 'loaded' : ''}`}
+                      onLoad={() => setChoiceLoaded((prev) => ({ ...prev, [i]: true }))}
+                    />
+                  </span>
+                </button>
+              ))}
+            </div>
+          ) : (
+            <div className="choices-grid">
+              {question.choices.map((choice, i) => (
+                <button
+                  key={i}
+                  className={`choice-btn ${COLORS[i]}`}
+                  onClick={() => handleSelect(i)}
+                >
+                  <span className="choice-label">{LABELS[i]}</span>
+                  <span
+                    className="choice-text"
+                    dangerouslySetInnerHTML={{ __html: addFurigana(choice) }}
+                  />
+                </button>
+              ))}
+            </div>
+          )
         ) : (
           <div className={`feedback-card ${isCorrect ? 'feedback-ok' : 'feedback-ng'}`}>
-            {/* スクロール対象はここだけ */}
             <div className="feedback-body">
               <div className="feedback-header">
                 <span className="feedback-icon">{isCorrect ? '🎉' : '😢'}</span>
@@ -93,16 +136,22 @@ export default function QuizScreen({ question, questionIndex, total, onAnswer, o
                   dangerouslySetInnerHTML={{
                     __html: isCorrect
                       ? 'せいかい！'
-                      : `ざんねん！正解は「${addFurigana(question.choices[question.correct])}」`,
+                      : `ざんねん！正解は「${addFurigana(correctLabel)}」`,
                   }}
                 />
               </div>
+              {isFlagMode && (
+                <img
+                  src={`https://flagcdn.com/w160/${question.code}.png`}
+                  alt={question.name}
+                  className="feedback-flag"
+                />
+              )}
               <p
                 className="feedback-explanation"
                 dangerouslySetInnerHTML={{ __html: addFurigana(question.funFact) }}
               />
             </div>
-            {/* ボタンは常に最下部に固定 */}
             <button className="next-btn" onClick={onNext}>
               {questionIndex + 1 >= total ? '🏆 けっかをみる！' : 'つぎの問題へ →'}
             </button>

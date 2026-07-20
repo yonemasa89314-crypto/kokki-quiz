@@ -287,3 +287,183 @@ rt   { font-size: 0.55em; font-weight: 500; letter-spacing: 0.01em; }
 .restart-btn:active { transform: scale(.97); }
 
 .result-footer { text-align: center; color: #888; font-size: .88rem; }
+
+.result-stage { color: #90caf9; font-size: .95rem; font-weight: 700; }
+.result-clear-box {
+  border-radius: 12px; padding: 12px 14px; font-size: .95rem; font-weight: 700;
+  text-align: center; line-height: 1.5;
+}
+.result-clear-box.is-ok { background: #e8f5e9; color: #1b5e20; border: 2px solid #66bb6a; }
+.result-clear-box.is-ng { background: #fff8e1; color: #e65100; border: 2px solid #ffcc80; }
+.mistake-name { font-size: 1rem; font-weight: 900; color: var(--text); margin-bottom: 2px; }
+.path-back-btn {
+  padding: 14px; font-size: 1rem; font-weight: 800; color: #fff;
+  background: rgba(255,255,255,.12); border-radius: 50px;
+  border: 1px solid rgba(255,255,255,.2);
+}
+.path-back-btn:active { background: rgba(255,255,255,.2); }
+
+/* ========== PATH SCREEN ========== */
+.path-screen {
+  min-height: 100dvh;
+  background: #e8edf2;
+  padding-bottom: 48px;
+}
+.path-hero {
+  background: linear-gradient(160deg, #0a192f 0%, #0f3460 100%);
+  color: #fff; padding: 28px 20px 24px; text-align: center;
+}
+.path-hero-brand {
+  font-size: 1.85rem; font-weight: 900; letter-spacing: .02em;
+  margin-bottom: 8px;
+}
+.path-hero-sub { font-size: .95rem; color: #c5d4e8; line-height: 1.5; margin-bottom: 14px; }
+.path-hero-stats {
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+}
+.path-hero-stats span {
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18);
+  border-radius: 999px; padding: 6px 12px; font-size: .85rem; font-weight: 700;
+}
+
+.path-body { padding: 8px 0 24px; }
+.path-course { padding: 20px 0 8px; }
+.path-course-head { padding: 0 20px 12px; }
+.path-course-badge {
+  display: inline-block; background: #1a1a2e; color: #fff;
+  font-size: .75rem; font-weight: 800; border-radius: 6px;
+  padding: 4px 10px; margin-bottom: 8px;
+}
+.path-course-title {
+  font-size: 1.45rem; font-weight: 900; color: #1a1a2e;
+  display: flex; align-items: center; gap: 8px;
+}
+.path-course-emoji { font-size: 1.4rem; }
+
+.path-track {
+  position: relative;
+  padding: 8px 16px 24px;
+  display: flex; flex-direction: column; gap: 22px;
+}
+.path-line {
+  position: absolute;
+  left: 50%; top: 12px; bottom: 12px;
+  width: 0;
+  border-left: 3px dashed #9aafc4;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.path-node {
+  position: relative;
+  display: flex; align-items: center;
+  width: 100%;
+  z-index: 1;
+}
+.path-node-left { justify-content: flex-start; padding-right: 42%; }
+.path-node-right { justify-content: flex-end; padding-left: 42%; }
+
+.path-dot {
+  position: absolute; left: 50%; top: 50%;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: #b0c0d0; border: 3px solid #fff;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 2px #9aafc4;
+}
+.path-dot.is-open { background: #1976d2; box-shadow: 0 0 0 2px #1976d2; }
+.path-dot.is-cleared { background: #2e7d32; box-shadow: 0 0 0 2px #2e7d32; }
+
+.path-card {
+  width: 100%; max-width: 230px;
+  background: #fff; border-radius: 18px;
+  padding: 12px 14px; text-align: left;
+  box-shadow: 0 4px 14px rgba(26, 40, 60, .12);
+  border: 2px solid transparent;
+  display: flex; flex-direction: column; gap: 4px;
+  transition: transform .12s, box-shadow .12s;
+}
+.path-card:not(:disabled):active { transform: scale(.97); }
+.path-card.is-cleared { border-color: #81c784; }
+.path-card.is-locked { opacity: .55; cursor: not-allowed; background: #f3f5f7; }
+
+.path-card-top {
+  display: flex; align-items: center; justify-content: space-between; gap: 6px;
+}
+.path-card-lesson { font-size: .75rem; font-weight: 800; color: #607080; }
+.path-card-mode {
+  font-size: .7rem; font-weight: 800; border-radius: 999px;
+  padding: 2px 8px; white-space: nowrap;
+}
+.mode-name { background: #e3f2fd; color: #1565c0; }
+.mode-flag { background: #fff3e0; color: #e65100; }
+
+.path-card-title { font-size: 1rem; font-weight: 900; color: #1a1a2e; line-height: 1.3; }
+.path-card-sub { font-size: .78rem; color: #607080; font-weight: 700; line-height: 1.35; }
+.path-card-foot {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 4px;
+}
+.path-card-count { font-size: .75rem; font-weight: 700; color: #78909c; }
+.path-card-check {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: #2e7d32; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .95rem; font-weight: 900;
+}
+.path-card-go {
+  font-size: .78rem; font-weight: 900; color: #1565c0;
+  background: #e3f2fd; border-radius: 999px; padding: 4px 10px;
+}
+.path-card-lock { font-size: 1rem; }
+.path-card-best { font-size: .72rem; color: #2e7d32; font-weight: 700; }
+
+/* quiz extras */
+.quiz-stage-label {
+  color: #90caf9; font-size: .8rem; font-weight: 700; text-align: center; flex-shrink: 0;
+}
+.name-prompt {
+  flex: 1; min-height: 0; width: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background: #f5f8fc; border-radius: 12px; border: 2px solid #e0e7ef;
+  padding: 16px;
+}
+.name-prompt-text {
+  font-size: 1.6rem; font-weight: 900; color: #0d47a1; text-align: center; line-height: 1.4;
+}
+
+.flag-choices-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  flex: 1;
+  min-height: 0;
+}
+.flag-choice-btn {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 8px; border-radius: 12px; color: #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,.25);
+  width: 100%; height: 100%; min-height: 0;
+}
+.flag-choice-btn:active { transform: scale(.96); }
+.flag-choice-img-wrap {
+  flex: 1; min-height: 0; width: 100%;
+  background: rgba(255,255,255,.92); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; position: relative;
+}
+.flag-choice-img {
+  width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity .25s;
+}
+.flag-choice-img.loaded { opacity: 1; }
+.flag-choice-skel { color: #999; font-size: .85rem; }
+.feedback-flag {
+  width: 120px; height: auto; border-radius: 6px; border: 2px solid #e0e0e0;
+  align-self: center;
+}
+
+@media (max-width: 380px) {
+  .path-node-left { padding-right: 38%; }
+  .path-node-right { padding-left: 38%; }
+  .path-card { max-width: 200px; }
+}

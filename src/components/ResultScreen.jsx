@@ -2,23 +2,25 @@ import { useState } from 'react'
 
 function getGrade(score, total) {
   const pct = score / total
-  if (pct >= 0.9)  return { grade: 'S', label: '世界地理マスター！', color: '#f9a825', bg: '#fffde7', emoji: '🏆' }
-  if (pct >= 0.7)  return { grade: 'A', label: 'すごい！よく知ってるね！', color: '#2e7d32', bg: '#e8f5e9', emoji: '🌟' }
-  if (pct >= 0.5)  return { grade: 'B', label: 'よくできました！', color: '#1565c0', bg: '#e3f2fd', emoji: '⭐' }
-  if (pct >= 0.3)  return { grade: 'C', label: 'もうすこし！', color: '#e65100', bg: '#fff3e0', emoji: '🗺️' }
+  if (pct >= 0.9) return { grade: 'S', label: '世界地理マスター！', color: '#f9a825', bg: '#fffde7', emoji: '🏆' }
+  if (pct >= 0.7) return { grade: 'A', label: 'すごい！よく知ってるね！', color: '#2e7d32', bg: '#e8f5e9', emoji: '🌟' }
+  if (pct >= 0.5) return { grade: 'B', label: 'よくできました！', color: '#1565c0', bg: '#e3f2fd', emoji: '⭐' }
+  if (pct >= 0.3) return { grade: 'C', label: 'もうすこし！', color: '#e65100', bg: '#fff3e0', emoji: '🗺️' }
   return { grade: 'D', label: 'もっとべんきょうしよう！', color: '#c62828', bg: '#ffebee', emoji: '💪' }
 }
 
-export default function ResultScreen({ score, total, answers, onRestart }) {
+export default function ResultScreen({ score, total, answers, stageTitle, clearNeed, cleared, onRestart, onBackPath }) {
   const [showMistakes, setShowMistakes] = useState(false)
   const { grade, label, color, bg, emoji } = getGrade(score, total)
   const mistakes = answers.filter((a) => !a.isCorrect)
+  const need = clearNeed ?? Math.min(6, total)
 
   return (
     <div className="result-screen">
       <div className="result-header">
         <div className="result-emoji">{emoji}</div>
         <h2 className="result-title">けっか発表！</h2>
+        {stageTitle && <p className="result-stage">{stageTitle}</p>}
       </div>
 
       <div className="result-score-card" style={{ borderColor: color, background: bg }}>
@@ -31,11 +33,17 @@ export default function ResultScreen({ score, total, answers, onRestart }) {
         <p className="result-label" style={{ color }}>{label}</p>
       </div>
 
+      <div className={`result-clear-box ${cleared ? 'is-ok' : 'is-ng'}`}>
+        {cleared
+          ? `🎉 クリア！つぎのレッスンがひらいたよ！（${need}問以上でクリア）`
+          : `あと${Math.max(0, need - score)}問せいかいするとクリアできるよ！（${need}問以上）`}
+      </div>
+
       <div className="result-message-box">
         <p className="result-message">
           {score === total
-            ? '全問正解！世界の国旗をぜんぶ知ってるなんてすごすぎる！🌍'
-            : `${total - score}問まちがえたよ。もう一度チャレンジして全問正解をめざそう！🌎`}
+            ? '全問正解！このレッスンの国旗をマスターだね！🌍'
+            : `${total - score}問まちがえたよ。もう一度チャレンジしてみよう！🌎`}
         </p>
       </div>
 
@@ -61,8 +69,15 @@ export default function ResultScreen({ score, total, answers, onRestart }) {
                       className="mistake-flag"
                     />
                     <div className="mistake-answers">
-                      <div className="mistake-wrong">❌ あなたの答え：{a.choices[a.selectedIndex]}</div>
-                      <div className="mistake-correct">✅ 正解：{a.choices[a.correctIndex]}</div>
+                      <div className="mistake-name">{a.name}</div>
+                      <div className="mistake-wrong">
+                        ❌ あなたの答え：
+                        {a.mode === 'flag' ? a.choiceNames[a.selectedIndex] : a.choices[a.selectedIndex]}
+                      </div>
+                      <div className="mistake-correct">
+                        ✅ 正解：
+                        {a.mode === 'flag' ? a.choiceNames[a.correctIndex] : a.choices[a.correctIndex]}
+                      </div>
                     </div>
                   </div>
                   <p className="mistake-explanation">{a.funFact}</p>
@@ -78,9 +93,11 @@ export default function ResultScreen({ score, total, answers, onRestart }) {
       )}
 
       <button className="restart-btn" onClick={onRestart}>
-        🔄 もう一度あそぶ
+        🔄 もう一度チャレンジ
       </button>
-      <p className="result-footer">世界の国旗をもっと覚えよう！</p>
+      <button className="path-back-btn" onClick={onBackPath}>
+        ← マップにもどる
+      </button>
     </div>
   )
 }
