@@ -21,6 +21,11 @@ export function saveStageScore(stageId, score) {
   return progress
 }
 
+export function resetProgress() {
+  localStorage.removeItem(KEY)
+  return { scores: {} }
+}
+
 export function isStageCleared(stage, progress = loadProgress()) {
   const score = progress.scores[stage.id]
   if (score == null) return false

@@ -29,7 +29,7 @@ export default function QuizScreen({ question, questionIndex, total, stageTitle,
   }
 
   return (
-    <div className="quiz-screen">
+    <div className={`quiz-screen ${isFlagMode ? 'quiz-flag-mode' : ''}`}>
       <div className="progress-wrap">
         <div className="progress-bar">
           <div className="progress-fill" style={{ width: `${progress}%` }} />

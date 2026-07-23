@@ -1,10 +1,19 @@
+import { useState } from 'react'
 import { courses, CLEAR_SCORE, getAllStages } from '../data/stages'
-import { loadProgress, isStageCleared, isStageUnlocked } from '../utils/progress'
+import { loadProgress, isStageCleared, isStageUnlocked, resetProgress } from '../utils/progress'
 
 export default function PathScreen({ onStartStage, totalCountries }) {
-  const progress = loadProgress()
+  const [progress, setProgress] = useState(() => loadProgress())
   const allStages = getAllStages()
   const clearedCount = allStages.filter((s) => isStageCleared(s, progress)).length
+  const hasProgress = Object.keys(progress.scores).length > 0
+
+  const handleReset = () => {
+    if (!hasProgress) return
+    const ok = window.confirm('クリア状況をリセットして、最初からやり直しますか？')
+    if (!ok) return
+    setProgress(resetProgress())
+  }
 
   return (
     <div className="path-screen">
@@ -17,6 +26,11 @@ export default function PathScreen({ onStartStage, totalCountries }) {
           <span>クリア {clearedCount} / {allStages.length}</span>
           <span>合格ライン {CLEAR_SCORE}問以上</span>
         </div>
+        {hasProgress && (
+          <button type="button" className="path-reset-btn" onClick={handleReset}>
+            クリア状況をリセット
+          </button>
+        )}
       </header>
 
       <div className="path-body">
